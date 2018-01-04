@@ -1,6 +1,6 @@
 [package]
 name = "term-bash"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Gaurav Das <gaurav.dns2@gmail.com>"]
 
 [dependencies]
