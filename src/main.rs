@@ -10,13 +10,9 @@ fn main() {
         .env("PS1", "$ ");
 
 
-    let mut argv = env::args();
-    argv.next();
-    loop {
-        match argv.next() {
-            None => break,
-            Some(x) => cmmd.arg(x),
-        };
+    let argv = env::args().skip(1);
+    for arg in argv {
+        cmmd.arg(arg);
     }
 
     cmmd.status().expect("could not start bash.exe");
