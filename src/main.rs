@@ -15,5 +15,8 @@ fn main() {
         cmmd.arg(arg);
     }
 
-    cmmd.status().expect("could not start bash.exe");
+    cmmd.status().unwrap_or_else(|err| {
+        eprintln!("could not start bash.exe\n{}", err);
+        std::process::exit(1)
+    });
 }
